@@ -33,3 +33,26 @@ test_cases:
         gender_source_value: female 
         gender_concept_id: 8532
         person_source_value: "2"
+  - test_id: "0003"
+    description: "Populate Condition for verificationStatus==Confirmed"
+    transform: ConditionMap
+    fhir_input:
+      resourceType: Condition
+      id: "3"
+      verificationStatus: 
+        coding:
+          - system: "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+            code: "confirmed"
+            display: "Confirmed"
+        text: Confirmed
+      verificationStatus: 
+        coding:
+          - system: "http://terminology.hl7.org/CodeSystem/condition-category"
+            code: "encounter-diagnosis"
+            display: "Encounter Diagnosis"
+        text: "Encounter Diagnosis"
+      onsetDateTime: '1999-12-31'
+    expected_output:
+      - resourceType: ConditionOccurrence
+        condition_occurrence_id: 3
+        coundition_source_value: "TEST"

@@ -1,0 +1,6 @@
+{
+  "resourceType" : "ConditionOccurrence",
+  "condition_occurrence_id" : 3,
+  "condition_start_date" : "1999-12-31",
+  "condition_start_datetime" : "1999-12-31"
+}
