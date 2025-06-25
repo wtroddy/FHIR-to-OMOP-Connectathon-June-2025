@@ -45,14 +45,21 @@ test_cases:
             code: "confirmed"
             display: "Confirmed"
         text: Confirmed
-      verificationStatus: 
-        coding:
-          - system: "http://terminology.hl7.org/CodeSystem/condition-category"
-            code: "encounter-diagnosis"
-            display: "Encounter Diagnosis"
-        text: "Encounter Diagnosis"
+      # category: 
+      #   coding:
+      #     - system: "http://terminology.hl7.org/CodeSystem/condition-category"
+      #       code: "encounter-diagnosis"
+      #       display: "Encounter Diagnosis"
+      #   text: "Encounter Diagnosis"
+      # code: 
+      #   coding:
+      #     - system: "http://snomed.info/sct"
+      #       code: "271807003"
+      #   text: "Skin rash"
       onsetDateTime: '1999-12-31'
     expected_output:
       - resourceType: ConditionOccurrence
         condition_occurrence_id: 3
-        coundition_source_value: "TEST"
+        condition_start_date: '1999-12-31'
+        condition_start_datetime: '1999-12-31 12:00:00'
+        condition_concept_id: 140214
