@@ -22,14 +22,11 @@ group ConditionOccurrence(source src : Condition, target tgt : ConOccTable)     
         src.recordedDate as rd -> tgt.condition_start_datetime = cast(rd,"dateTime"), tgt.condition_start_date = rd;
         src.onset : dateTime as osd -> tgt.condition_start_datetime = osd, tgt.condition_start_date = cast(osd, "date");
         src.abatement : dateTime as abdt -> tgt.condition_end_datetime = adt, tgt.condition_end_date = cast(abdt, "date");
-        src.category as s -> tgt then {
-            s.coding as sc -> tgt then {
-                sc.code -> tgt.condition_type_concept_id = sc.code ;
-            };
-        };
-         src.clinicalStatus as s -> tgt then {
-            s.coding as sc -> tgt then {
-                sc.code -> tgt.condition_status_concept_id = sc.code ;
+        src.category first as s -> tgt then {
+            s.coding first as sc -> tgt then {
+                sc.coding first as scc -> tgt then {
+                    scc.code -> tgt.condition_type_concept_id = scc.code ;
+                };
             };
         };
         
