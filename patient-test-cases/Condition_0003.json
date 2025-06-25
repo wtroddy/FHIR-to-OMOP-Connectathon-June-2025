@@ -4,12 +4,12 @@
     "verificationStatus": {
         "coding": [
             {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "encounter-diagnosis",
-                "display": "Encounter Diagnosis"
+                "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                "code": "confirmed",
+                "display": "Confirmed"
             }
         ],
-        "text": "Encounter Diagnosis"
+        "text": "Confirmed"
     },
     "onsetDateTime": "1999-12-31",
     "text": {

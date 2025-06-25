@@ -1,5 +1,7 @@
 {
     "resourceType": "ConditionOccurrence",
     "condition_occurrence_id": 3,
-    "coundition_source_value": "TEST"
+    "condition_start_date": "1999-12-31",
+    "condition_start_datetime": "1999-12-31 12:00:00",
+    "condition_concept_id": 140214
 }
