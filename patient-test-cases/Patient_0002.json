@@ -1,0 +1,10 @@
+{
+    "resourceType": "Patient",
+    "id": "2",
+    "birthDate": "1970-01-01",
+    "gender": "female",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns='http://www.w3.org/1999/xhtml'>Alive female populates correctly</div>"
+    }
+}
