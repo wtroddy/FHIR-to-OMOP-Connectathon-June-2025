@@ -57,12 +57,10 @@ def main(test_config_path: Path):
             test_id=case["test_id"],
             resource_type=input_fhir["resourceType"]
         )
+
         save_resource(output_file=input_fhir_file, resource_data=input_fhir)
 
-        print(input_fhir_file)
-        print(input_fhir_file.parent.parent)
-
-        java_cmds.append(get_java_cmd(input_fhir_file=input_fhir_file, structure_map_name="PersonMap", test_id=case["test_id"]))
+        java_cmds.append(get_java_cmd(input_fhir_file=input_fhir_file, structure_map_name=case["transform"], test_id=case["test_id"]))
 
         for expected_output in case["expected_output"]:
             output_fhir = generate_fhir_resource(resource_data=expected_output)
@@ -72,6 +70,7 @@ def main(test_config_path: Path):
                 test_id=case["test_id"],
                 resource_type=output_fhir["resourceType"]
             )
+
             save_resource(output_file=output_expected_file, resource_data=output_fhir)
 
     # save the java cmd 
