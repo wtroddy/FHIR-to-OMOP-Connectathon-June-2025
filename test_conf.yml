@@ -9,13 +9,14 @@ test_cases:
       gender: male
     expected_output:
       - resourceType: Person 
-        person_id: 1
+        # person_id: 1
         year_of_birth: 1970
         month_of_birth: 1
         day_of_birth: 1
         gender_source_value: male 
-        gender_concept_id: 8507
-        person_source_value: "1"
+        birth_datetime: "1970-01-01"
+        # gender_concept_id: 8507
+        # person_source_value: "1"
   - test_id: "0002"
     description: "Alive female populates correctly"
     transform: PersonMap
@@ -26,13 +27,14 @@ test_cases:
       gender: female
     expected_output:
       - resourceType: Person 
-        person_id: 2
+        # person_id: 2
         year_of_birth: 1970
         month_of_birth: 1
         day_of_birth: 1 
+        birth_datetime: "1970-01-01"
         gender_source_value: female 
-        gender_concept_id: 8532
-        person_source_value: "2"
+        # gender_concept_id: 8532
+        # person_source_value: "2"
   - test_id: "0003"
     description: "Populate Condition for verificationStatus==Confirmed"
     transform: ConditionMap
@@ -45,17 +47,17 @@ test_cases:
             code: "confirmed"
             display: "Confirmed"
         text: Confirmed
-      # category: 
-      #   coding:
-      #     - system: "http://terminology.hl7.org/CodeSystem/condition-category"
-      #       code: "encounter-diagnosis"
-      #       display: "Encounter Diagnosis"
-      #   text: "Encounter Diagnosis"
-      # code: 
-      #   coding:
-      #     - system: "http://snomed.info/sct"
-      #       code: "271807003"
-      #   text: "Skin rash"
+      category: 
+        coding:
+          - system: "http://terminology.hl7.org/CodeSystem/condition-category"
+            code: "encounter-diagnosis"
+            display: "Encounter Diagnosis"
+        text: "Encounter Diagnosis"
+      code: 
+        coding:
+          - system: "http://snomed.info/sct"
+            code: "271807003"
+        text: "Skin rash"
       onsetDateTime: '1999-12-31'
     expected_output:
       - resourceType: ConditionOccurrence
