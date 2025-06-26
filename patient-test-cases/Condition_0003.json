@@ -11,6 +11,25 @@
         ],
         "text": "Confirmed"
     },
+    "category": {
+        "coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+            }
+        ],
+        "text": "Encounter Diagnosis"
+    },
+    "code": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "271807003"
+            }
+        ],
+        "text": "Skin rash"
+    },
     "onsetDateTime": "1999-12-31",
     "text": {
         "status": "generated",
