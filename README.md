@@ -9,7 +9,7 @@ This repo includes a simple method to define and run test cases for the FHIR-to-
 
 There may be better and more robust mechanisms for defining the test cases, but this lightweight setup helps support quick/easy development.
 
-This code is not thoroughly tested and was prototyped in an afternoon for the FHIR-to-OMOP connectathon. 
+This code is not thoroughly tested and was prototyped in an afternoon for the FHIR-to-OMOP connectathon. The structure and details of this repo are examples of one approach and need iteration to mature.
 
 ## Setup:
 
