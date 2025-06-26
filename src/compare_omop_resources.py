@@ -17,10 +17,10 @@ def main(test_config_path: Path):
         expected_output_dir = Path("expected-output")
         transformed_dir = Path("transformed-omop")
 
-        with open((expected_output_dir).joinpath("Person_0002.json"), "r") as f:
+        with open((expected_output_dir).joinpath(f"{case['expected_output'][0]['resourceType']}_{case['test_id']}.json"), "r") as f:
             expected = json.load(f)
 
-        with open((transformed_dir).joinpath("Output_0002.json"), "r") as f:
+        with open((transformed_dir).joinpath(f"Output_{case['test_id']}.json"), "r") as f:
             transformed = json.load(f)
 
         # result 
@@ -39,5 +39,4 @@ def main(test_config_path: Path):
     print(tabulate.tabulate(rows, header))
 
 if __name__ == "__main__":
-
     main(test_config_path="test_conf.yml")

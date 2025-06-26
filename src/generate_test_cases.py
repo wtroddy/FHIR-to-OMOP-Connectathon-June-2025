@@ -2,10 +2,11 @@ from pathlib import Path
 import json 
 import yaml 
 
-def generate_fhir_resource(resource_data, description=None):
+def generate_fhir_resource(resource_data: dict, description: str = None) -> dict:
 
     if description:
         # add the text programmatically 
+        # conditionally adding this b/c the output OMOP Resources don't the text property
         resource_data["text"] = {
             "status": "generated",
             "div": f"<div xmlns='http://www.w3.org/1999/xhtml'>{description}</div>"
@@ -13,7 +14,7 @@ def generate_fhir_resource(resource_data, description=None):
 
     return resource_data
 
-def get_output_file(output_parent_dir, test_id, resource_type):
+def get_output_file(output_parent_dir: Path, test_id: str, resource_type: str) -> Path:
     # output_path = output_parent_dir.joinpath(f"test-{test_id}")
     output_path = output_parent_dir
     output_path.mkdir(parents=True, exist_ok=True)
@@ -22,12 +23,12 @@ def get_output_file(output_parent_dir, test_id, resource_type):
 
     return output_file
 
-def save_resource(output_file, resource_data):
+def save_resource(output_file: Path, resource_data: dict) -> None:
 
     with open(output_file, "w") as f:
         json.dump(resource_data, f, indent=4)
 
-def get_java_cmd(input_fhir_file, structure_map_name, test_id):
+def get_java_cmd(input_fhir_file: Path, structure_map_name: str, test_id: str) -> str:
 
     java_output_file = get_output_file(Path("transformed-omop"), test_id, resource_type="Output") 
 
@@ -40,15 +41,15 @@ def get_java_cmd(input_fhir_file, structure_map_name, test_id):
 
     return cmd 
 
-def main(test_config_path: Path):
+def main(test_config_path: Path) -> None:
 
     # read the test case configuration 
     with open(test_config_path, "r") as f:
         test_config = yaml.safe_load(f)
 
+    # placeholder list for the java cmds to run the transform
     java_cmds = []
 
-    # iterate over the input 
     for case in test_config["test_cases"]:
         input_fhir = generate_fhir_resource(resource_data=case["fhir_input"], description=case["description"])
 
