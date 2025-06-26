@@ -36,7 +36,7 @@ def main(test_config_path: Path):
     # print result
     header = comparison_results[0].keys()
     rows = [x.values() for x in comparison_results]
-    print(tabulate.tabulate(rows, header))
+    print(tabulate.tabulate(rows, header, tablefmt="github"))
 
 if __name__ == "__main__":
     main(test_config_path="test_conf.yml")

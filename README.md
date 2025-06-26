@@ -38,9 +38,9 @@ $ python src/compare_omop_resources.py
 
 The comparison script will give an output like this: 
 
-  test_id  description                                           transform     success
----------  ----------------------------------------------------  ------------  ---------
-     0001  Alive male populates correctly                        PersonMap     True
-     0002  Alive female populates correctly                      PersonMap     True
-     0003  Populate Condition for verificationStatus==Confirmed  ConditionMap  False
+|   test_id | description                                          | transform    | success   |
+|-----------|------------------------------------------------------|--------------|-----------|
+|      0001 | Alive male populates correctly                       | PersonMap    | False     |
+|      0002 | Alive female populates correctly                     | PersonMap    | False     |
+|      0003 | Populate Condition for verificationStatus==Confirmed | ConditionMap | False     |
 
