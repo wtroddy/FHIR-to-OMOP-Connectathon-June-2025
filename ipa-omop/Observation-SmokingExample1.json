@@ -1,0 +1,7 @@
+{
+  "resourceType" : "Observation",
+  "observation_concept_id" : "365980008",
+  "observation_date" : "2009-01-01",
+  "observation_datetime" : "2009-01-01",
+  "value_as_concept_id" : "449868002"
+}

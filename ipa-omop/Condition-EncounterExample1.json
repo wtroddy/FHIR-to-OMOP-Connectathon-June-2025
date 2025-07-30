@@ -1,0 +1,8 @@
+{
+  "resourceType" : "ConditionOccurrence",
+  "condition_concept_id" : "271807003",
+  "condition_start_date" : "2018-11",
+  "condition_start_datetime" : "2018-11",
+  "condition_type_concept_id" : "encounter-diagnosis",
+  "condition_status_concept_id" : "active"
+}

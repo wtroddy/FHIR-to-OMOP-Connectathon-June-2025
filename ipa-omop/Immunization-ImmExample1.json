@@ -1,0 +1,10 @@
+{
+  "resourceType" : "DrugExposure",
+  "drug_exposure_start_date" : "2013-01-10",
+  "drug_exposure_start_datetime" : "2013-01-10",
+  "drug_exposure_end_date" : "2013-01-10",
+  "drug_exposure_end_datetime" : "2013-01-10",
+  "quantity" : 5,
+  "lot_number" : "AAJN11K",
+  "dose_unit_source_value" : "mg"
+}

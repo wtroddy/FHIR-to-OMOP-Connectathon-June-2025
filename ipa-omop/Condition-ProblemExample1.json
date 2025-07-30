@@ -1,0 +1,8 @@
+{
+  "resourceType" : "ConditionOccurrence",
+  "condition_concept_id" : "400097005",
+  "condition_start_date" : "2018-11",
+  "condition_start_datetime" : "2018-11",
+  "condition_type_concept_id" : "problem-list-item",
+  "condition_status_concept_id" : "active"
+}
